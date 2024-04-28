@@ -8,7 +8,7 @@
 
   <!-- 0, brazil, venus, ab, kansas, iron, chinese, 3 hearts, jupiter, pacific -->
   <body style="margin: 30px">
-    <form action="">
+    <form>
       <p id="q1">1. How many blue stripes are there on the U.S. flag?</p>
       <input type="radio" name="q1" id="q1o1" />
       <label for="q1o1">6</label> <br />
@@ -146,13 +146,14 @@
       <label for="q10o3">Neptune</label> <br />
 
       <input type="radio" name="q10" id="q10o4" required />
-      <label for="q10o4">Earth</label> <br />
-      <br />
+      <label for="q10o4">Earth</label>
       <p id="q10Result"></p>
-      <button type="reset">Clear all choices</button>
+
+      <br />
+
       <button type="submit" id="submitBtn">Submit</button>
     </form>
-
-    <script src="./JS/q$a.js"></script>
+    <p id="result"></p>
+    <script type="module" src="./JS/q$a.js"></script>
   </body>
 </html>
