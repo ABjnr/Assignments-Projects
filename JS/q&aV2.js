@@ -2,7 +2,7 @@ let userAns = {};
 
 async function questions() {
   try {
-    const response = await fetch("data.json");
+    const response = await fetch("./json/data.json");
     if (!response.ok) {
       throw new Error("Network Error!");
     }
@@ -23,7 +23,7 @@ function displayQuestions(questions) {
     questionDiv.className = "displayQuestions";
     questionDiv.dataset.correctAnswer = questionData.correct_answer;
     questionDiv.innerHTML = `
-      <h3>Questions ${index + 1}:</h3>
+      <h3>Question ${index + 1}:</h3>
       <p>${questionData.question}</p>
       <form id="question-${index}">
         <label>

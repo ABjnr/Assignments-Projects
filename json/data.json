@@ -1,0 +1,214 @@
+{
+  "questions": [
+    {
+      "question": "What is the capital of France?",
+      "options": {
+        "A": "Berlin",
+        "B": "Paris",
+        "C": "Rome",
+        "D": "London"
+      },
+      "correct_answer": "B"
+    },
+    {
+      "question": "Who wrote 'Romeo and Juliet'?",
+      "options": {
+        "A": "Jane Austen",
+        "B": "Mark Twain",
+        "C": "Charles Dickens",
+        "D": "William Shakespeare"
+      },
+      "correct_answer": "D"
+    },
+    {
+      "question": "Which planet is known as the Red Planet?",
+      "options": {
+        "A": "Saturn",
+        "B": "Mars",
+        "C": "Jupiter",
+        "D": "Venus"
+      },
+      "correct_answer": "B"
+    },
+    {
+      "question": "What is the chemical symbol for water?",
+      "options": {
+        "A": "NaCl",
+        "B": "H2O",
+        "C": "CO2",
+        "D": "HCl"
+      },
+      "correct_answer": "B"
+    },
+    {
+      "question": "Who painted the Mona Lisa?",
+      "options": {
+        "A": "Pablo Picasso",
+        "B": "Vincent van Gogh",
+        "C": "Michelangelo",
+        "D": "Leonardo da Vinci"
+      },
+      "correct_answer": "D"
+    },
+    {
+      "question": "What is the tallest mammal?",
+      "options": {
+        "A": "Hippo",
+        "B": "Elephant",
+        "C": "Giraffe",
+        "D": "Rhinoceros"
+      },
+      "correct_answer": "C"
+    },
+    {
+      "question": "Which country is known as the Land of the Rising Sun?",
+      "options": {
+        "A": "Vietnam",
+        "B": "China",
+        "C": "Japan",
+        "D": "Korea"
+      },
+      "correct_answer": "C"
+    },
+    {
+      "question": "Who was the first person to step on the moon?",
+      "options": {
+        "A": "Buzz Aldrin",
+        "B": "Neil Armstrong",
+        "C": "Michael Collins",
+        "D": "Yuri Gagarin"
+      },
+      "correct_answer": "B"
+    },
+    {
+      "question": "What is the chemical symbol for gold?",
+      "options": {
+        "A": "Fe",
+        "B": "Ag",
+        "C": "Pb",
+        "D": "Au"
+      },
+      "correct_answer": "D"
+    },
+    {
+      "question": "Who is the author of 'To Kill a Mockingbird'?",
+      "options": {
+        "A": "John Steinbeck",
+        "B": "Harper Lee",
+        "C": "Ernest Hemingway",
+        "D": "F. Scott Fitzgerald"
+      },
+      "correct_answer": "B"
+    },
+    {
+      "question": "What is the largest organ in the human body?",
+      "options": {
+        "A": "Heart",
+        "B": "Lung",
+        "C": "Skin",
+        "D": "Liver"
+      },
+      "correct_answer": "C"
+    },
+    {
+      "question": "Which gas do plants absorb from the atmosphere?",
+      "options": {
+        "A": "Oxygen",
+        "B": "Nitrogen",
+        "C": "Carbon dioxide",
+        "D": "Hydrogen"
+      },
+      "correct_answer": "C"
+    },
+    {
+      "question": "Who discovered penicillin?",
+      "options": {
+        "A": "Isaac Newton",
+        "B": "Marie Curie",
+        "C": "Alexander Fleming",
+        "D": "Louis Pasteur"
+      },
+      "correct_answer": "C"
+    },
+    {
+      "question": "What is the main component of the Earth's atmosphere?",
+      "options": {
+        "A": "Oxygen",
+        "B": "Argon",
+        "C": "Carbon dioxide",
+        "D": "Nitrogen"
+      },
+      "correct_answer": "D"
+    },
+    {
+      "question": "Which is the largest ocean on Earth?",
+      "options": {
+        "A": "Arctic Ocean",
+        "B": "Indian Ocean",
+        "C": "Atlantic Ocean",
+        "D": "Pacific Ocean"
+      },
+      "correct_answer": "D"
+    },
+    {
+      "question": "What is the chemical symbol for iron?",
+      "options": {
+        "A": "Fe",
+        "B": "Au",
+        "C": "Pb",
+        "D": "Ag"
+      },
+      "correct_answer": "A"
+    },
+    {
+      "question": "Who painted the ceiling of the Sistine Chapel?",
+      "options": {
+        "A": "Leonardo da Vinci",
+        "B": "Donatello",
+        "C": "Michelangelo",
+        "D": "Raphael"
+      },
+      "correct_answer": "C"
+    },
+    {
+      "question": "What is the largest planet in our solar system?",
+      "options": {
+        "A": "Neptune",
+        "B": "Saturn",
+        "C": "Uranus",
+        "D": "Jupiter"
+      },
+      "correct_answer": "D"
+    },
+    {
+      "question": "Who is known as the 'Father of Geometry'?",
+      "options": {
+        "A": "Pythagoras",
+        "B": "Archimedes",
+        "C": "Aristotle",
+        "D": "Euclid"
+      },
+      "correct_answer": "D"
+    },
+    {
+      "question": "What is the chemical symbol for silver?",
+      "options": {
+        "A": "Pb",
+        "B": "Fe",
+        "C": "Au",
+        "D": "Ag"
+      },
+      "correct_answer": "D"
+    },
+    {
+      "question": "Who wrote '1984'?",
+      "options": {
+        "A": "J.R.R. Tolkien",
+        "B": "George Orwell",
+        "C": "J.K. Rowling",
+        "D": "Ernest Hemingway"
+      },
+      "correct_answer": "B"
+    }
+  ]
+}
