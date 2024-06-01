@@ -20,8 +20,8 @@ function displayingProducts(products) {
     const productDiv = document.createElement("div");
     productDiv.className = "prodContainer";
     productDiv.innerHTML = `
+    <a href="productDisplay2.html?id=${productData.id}">
     <h3>${productData.title}</h3>
-    <a href="productDisplay2.html">
     <img style="height: 250px; width: 350px" src="${productData.thumbnail}" /> 
     </a>
     <p>$${productData.price}</p>
