@@ -8,6 +8,8 @@ const additionBtn = document.querySelector("#additionBtn");
 const subtractionBtn = document.querySelector("#subtractionBtn");
 const multiplicationBtn = document.querySelector("#multiplicationBtn");
 const divisionBtn = document.querySelector("#divisionBtn");
+const clearFields = document.querySelector("#clearFields");
+const recalculate = document.querySelector("#recalculate");
 
 //Create a function for each operation and set the funtion to be called on click
 // or you can just use if else
@@ -63,3 +65,16 @@ calcBtn.onclick = function () {
     }
   }
 };
+
+clearFields.onclick = function () {
+  firstInput.value = "";
+  secondInput.value = "";
+  additionBtn.checked = false;
+  subtractionBtn.checked = false;
+  divisionBtn.checked = false;
+  multiplicationBtn.checked = false;
+  answerDisplay.textContent = ``;
+};
+
+// hide the recalc button till the calculate button is clicked
+recalculate.onclick = function () {};
