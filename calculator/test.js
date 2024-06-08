@@ -1,6 +1,30 @@
-//Create a function for each operation and set the funtion to be called on click
-// or you can just use if else
-// set the operator icons to radio
+/* function addition() {
+  const sum = fieldOne + fieldTwo;
+  console.log(sum);
+  answerDisplay.textContent = `Your answer is: ${sum}`;
+}
+function subtraction() {
+  const sum = fieldOne - fieldTwo;
+  console.log(sum);
+  answerDisplay.textContent = `Your answer is: ${sum}`;
+}
+function multiplication() {
+  const sum = fieldOne * fieldTwo;
+  console.log(sum);
+  answerDisplay.textContent = `Your answer is: ${sum}`;
+}
+function division() {
+  const sum = fieldOne / fieldTwo;
+  console.log(sum);
+  answerDisplay.textContent = `Your answer is: ${sum}`;
+}
+ */
+
+/* const rad = document.querySelector("#myRadio");
+
+rad.onclick = function () {
+  console.log("Hello World!");
+}; */
 
 const firstInput = document.querySelector("#firstInput");
 const secondInput = document.querySelector("#secondInput");
@@ -11,10 +35,12 @@ const subtractionBtn = document.querySelector("#subtractionBtn");
 const multiplicationBtn = document.querySelector("#multiplicationBtn");
 const divisionBtn = document.querySelector("#divisionBtn");
 const clearFields = document.querySelector("#clearFields");
-const recalculate = document.querySelector("#recalculate");
 
 let total = 0;
-let operationClickCount = 0;
+let additionClickCount = 0;
+let subtractionClickCount = 0;
+let multiplicationClickCount = 0;
+let divisionClickCount = 0;
 
 calcBtn.onclick = function () {
   CalcBtnClick();
@@ -29,7 +55,10 @@ clearFields.onclick = function () {
   multiplicationBtn.checked = false;
   answerDisplay.textContent = ``;
   total = 0;
-  operationClickCount = 0;
+  additionClickCount = 0;
+  subtractionClickCount = 0;
+  multiplicationClickCount = 0;
+  divisionClickCount = 0;
 };
 
 function addition() {
@@ -39,6 +68,7 @@ function addition() {
   console.log(total);
   answerDisplay.textContent = `Your answer is: ${total}`;
 }
+
 function subtraction() {
   let fieldOne = Number(firstInput.value);
   let fieldTwo = Number(secondInput.value);
@@ -46,6 +76,7 @@ function subtraction() {
   console.log(total);
   answerDisplay.textContent = `Your answer is: ${total}`;
 }
+
 function multiplication() {
   let fieldOne = Number(firstInput.value);
   let fieldTwo = Number(secondInput.value);
@@ -53,6 +84,7 @@ function multiplication() {
   console.log(total);
   answerDisplay.textContent = `Your answer is: ${total}`;
 }
+
 function division() {
   let fieldOne = Number(firstInput.value);
   let fieldTwo = Number(secondInput.value);
@@ -64,6 +96,7 @@ function division() {
   console.log(total);
   answerDisplay.textContent = `Your answer is: ${total}`;
 }
+
 function CalcBtnClick() {
   let inputOne = firstInput.value;
   let fieldOne = Number(inputOne);
@@ -98,28 +131,42 @@ function CalcBtnClick() {
   }
 }
 
-additionBtn.addEventListener("click", () => onRadioClick("addition"));
-subtractionBtn.addEventListener("click", () => onRadioClick("subtraction"));
+// Add event listeners for the radio buttons
+additionBtn.addEventListener("click", () => handleRadioClick("addition"));
+subtractionBtn.addEventListener("click", () => handleRadioClick("subtraction"));
 multiplicationBtn.addEventListener("click", () =>
-  onRadioClick("multiplication")
+  handleRadioClick("multiplication")
 );
-divisionBtn.addEventListener("click", () => onRadioClick("division"));
+divisionBtn.addEventListener("click", () => handleRadioClick("division"));
 
-function onRadioClick(operation) {
-  if (
-    operation === "addition" ||
-    operation === "subtraction" ||
-    operation === "division" ||
-    operation === "multiplication"
-  ) {
-    operationClickCount++;
-    if (operationClickCount > 1) {
-      resetAndRecalc();
+function handleRadioClick(operation) {
+  if (operation === "addition") {
+    additionClickCount++;
+    if (additionClickCount > 1) {
+      resetForNewCalculation();
+    }
+  } else if (operation === "subtraction") {
+    subtractionClickCount++;
+    if (subtractionClickCount > 1) {
+      resetForNewCalculation();
+    }
+  } else if (operation === "multiplication") {
+    multiplicationClickCount++;
+    if (multiplicationClickCount > 1) {
+      resetForNewCalculation();
+    }
+  } else if (operation === "division") {
+    divisionClickCount++;
+    if (divisionClickCount > 1) {
+      resetForNewCalculation();
     }
   }
+  console.log(
+    `Radio button clicked for ${operation}: ${additionClickCount}, ${subtractionClickCount}, ${multiplicationClickCount}, ${divisionClickCount}`
+  );
 }
 
-function resetAndRecalc() {
+function resetForNewCalculation() {
   firstInput.value = total;
   secondInput.value = "";
   answerDisplay.textContent = "";
