@@ -36,21 +36,18 @@ function addition() {
   let fieldOne = Number(firstInput.value);
   let fieldTwo = Number(secondInput.value);
   total = fieldOne + fieldTwo;
-  console.log(total);
   answerDisplay.textContent = `Your answer is: ${total}`;
 }
 function subtraction() {
   let fieldOne = Number(firstInput.value);
   let fieldTwo = Number(secondInput.value);
   total = fieldOne - fieldTwo;
-  console.log(total);
   answerDisplay.textContent = `Your answer is: ${total}`;
 }
 function multiplication() {
   let fieldOne = Number(firstInput.value);
   let fieldTwo = Number(secondInput.value);
   total = fieldOne * fieldTwo;
-  console.log(total);
   answerDisplay.textContent = `Your answer is: ${total}`;
 }
 function division() {
@@ -61,7 +58,6 @@ function division() {
     return;
   }
   total = fieldOne / fieldTwo;
-  console.log(total);
   answerDisplay.textContent = `Your answer is: ${total}`;
 }
 function CalcBtnClick() {
