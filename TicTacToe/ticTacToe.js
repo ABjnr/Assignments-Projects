@@ -14,8 +14,8 @@ const allFields = document.querySelectorAll(".buttons");
 
 let clickCount = 0;
 let boardValues = Array(9).fill(null);
-let xVal = [];
-let oVal = [];
+let currentPlayer = "X";
+let startGame = true;
 const winningCombo = [
   [0, 1, 2],
   [3, 4, 5],
@@ -29,34 +29,40 @@ const winningCombo = [
 
 allFields.forEach((selectedField, index) => {
   selectedField.addEventListener("click", function () {
+    if (!startGame) {
+      result.textContent = ` Game Over, click "restart" to play again`;
+      return;
+    }
     if (this.textContent !== "") {
       console.log("This button is already clicked.");
       return;
     }
 
     clickCount++;
-    if (
-      clickCount === 1 ||
-      clickCount === 3 ||
-      clickCount === 5 ||
-      clickCount === 7 ||
-      clickCount === 9
-    ) {
-      this.textContent = "X";
-      boardValues[index] = "X";
-    }
-    if (
-      clickCount === 2 ||
-      clickCount === 4 ||
-      clickCount === 6 ||
-      clickCount === 8
-    ) {
-      this.textContent = "O";
-      boardValues[index] = "O";
-    }
-    if (clickCount >= 9) {
+    boardValues[index] = currentPlayer;
+    this.textContent = currentPlayer;
+
+    if (clickCount === 9) {
       console.log("Game Over");
-      result.textContent = "Game Over";
+      result.textContent = "Game Over. Tie game";
+      startGame = false;
+      return;
+    }
+
+    if (checkWinner("X", boardValues)) {
+      result.textContent = `Player ${currentPlayer} wins!`;
+      startGame = false;
+      return;
+    }
+    if (checkWinner("O", boardValues)) {
+      result.textContent = `Player ${currentPlayer} wins!`;
+      startGame = false;
+      return;
+    }
+    if (currentPlayer === "X") {
+      currentPlayer = "O";
+    } else {
+      currentPlayer = "X";
     }
     console.log(boardValues);
   });
@@ -64,6 +70,7 @@ allFields.forEach((selectedField, index) => {
 
 rstBtn.onclick = function () {
   console.clear();
+  startGame = true;
   btn1.textContent = "";
   btn2.textContent = "";
   btn3.textContent = "";
@@ -74,9 +81,24 @@ rstBtn.onclick = function () {
   btn8.textContent = "";
   btn9.textContent = "";
   clickCount = 0;
+  result.textContent = "";
   boardValues = Array(9).fill(null);
-  xVal = [];
-  oVal = [];
   console.log("Reset button clicked");
-  console.log(boardValues);
 };
+
+function checkWinner(player, board) {
+  for (let i = 0; i < winningCombo.length; i++) {
+    const combination = winningCombo[i];
+    let count = 0;
+
+    for (let j = 0; j < combination.length; j++) {
+      if (board[combination[j]] === player) {
+        count++;
+      }
+    }
+    if (count === 3) {
+      return true;
+    }
+  }
+  return false;
+}

@@ -13,7 +13,7 @@ const winningCombinations = [
   [0, 4, 8],
   [2, 4, 6],
 ];
-
+/* 
 allFields.forEach((selectedField, index) => {
   selectedField.addEventListener("click", function () {
     if (this.textContent !== "") {
@@ -54,3 +54,21 @@ function checkWin(player, board) {
   }
   return false;
 }
+
+ */
+
+allFields.forEach((selectedField, index) => {
+  selectedField.addEventListener("click", function () {
+    if (boardValues[index] !== null) {
+      console.log("This button is already clicked.");
+      return;
+    }
+    clickCount++;
+
+    const currentPlayer = clickCount % 2 === 0 ? "O" : "X";
+    boardValues[index] = currentPlayer;
+    this.textContent = currentPlayer;
+
+    console.log(boardValues);
+  });
+});
