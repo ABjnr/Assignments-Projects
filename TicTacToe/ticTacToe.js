@@ -43,10 +43,20 @@ allFields.forEach((selectedField, index) => {
     this.textContent = currentPlayer;
 
     if (clickCount === 9) {
-      console.log("Game Over");
-      result.textContent = "Game Over. Tie game";
-      startGame = false;
-      return;
+      if (checkWinner("X", boardValues)) {
+        result.textContent = `Player ${currentPlayer} wins!`;
+        startGame = false;
+        return;
+      } else if (checkWinner("O", boardValues)) {
+        result.textContent = `Player ${currentPlayer} wins!`;
+        startGame = false;
+        return;
+      } else {
+        console.log("Game Over");
+        result.textContent = "Game Over. Tie game";
+        startGame = false;
+        return;
+      }
     }
 
     if (checkWinner("X", boardValues)) {
@@ -84,6 +94,13 @@ rstBtn.onclick = function () {
   result.textContent = "";
   boardValues = Array(9).fill(null);
   console.log("Reset button clicked");
+
+  if (currentPlayer === "X") {
+    currentPlayer = "O";
+  } else {
+    currentPlayer = "X";
+  }
+  console.log(boardValues);
 };
 
 function checkWinner(player, board) {
