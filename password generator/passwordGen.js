@@ -10,7 +10,6 @@ function randPass(length) {
   console.log(Math.floor(Math.random() * characters.length));
   for (let i = 0; i < length; i += 1) {
     randIndex = Math.floor(Math.random() * characters.length);
-
     password += characters[randIndex];
   }
   return password;

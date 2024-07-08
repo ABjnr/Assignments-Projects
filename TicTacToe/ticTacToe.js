@@ -9,10 +9,13 @@ const btn8 = document.querySelector("#btn8");
 const btn9 = document.querySelector("#btn9");
 
 const rstBtn = document.querySelector("#rstBtn");
+const playerTurn = document.querySelector("#playerTurn");
+
 const result = document.querySelector("#result");
 const allFields = document.querySelectorAll(".buttons");
 
 let clickCount = 0;
+let slots;
 let boardValues = Array(9).fill(null);
 let currentPlayer = "X";
 let startGame = true;
@@ -42,7 +45,14 @@ allFields.forEach((selectedField, index) => {
     boardValues[index] = currentPlayer;
     this.textContent = currentPlayer;
 
+    if (currentPlayer === "X") {
+      playerTurn.textContent = `Player O's Turn!`;
+    } else {
+      playerTurn.textContent = `Player X's turn!`;
+    }
+
     if (clickCount === 9) {
+      playerTurn.textContent = "";
       if (checkWinner("X", boardValues)) {
         result.textContent = `Player ${currentPlayer} wins!`;
         startGame = false;
@@ -52,7 +62,6 @@ allFields.forEach((selectedField, index) => {
         startGame = false;
         return;
       } else {
-        console.log("Game Over");
         result.textContent = "Game Over. Tie game";
         startGame = false;
         return;
@@ -61,11 +70,13 @@ allFields.forEach((selectedField, index) => {
 
     if (checkWinner("X", boardValues)) {
       result.textContent = `Player ${currentPlayer} wins!`;
+      playerTurn.textContent = "";
       startGame = false;
       return;
     }
     if (checkWinner("O", boardValues)) {
       result.textContent = `Player ${currentPlayer} wins!`;
+      playerTurn.textContent = "";
       startGame = false;
       return;
     }
@@ -74,7 +85,7 @@ allFields.forEach((selectedField, index) => {
     } else {
       currentPlayer = "X";
     }
-    console.log(boardValues);
+    whoPlayedHere(boardValues, index);
   });
 });
 
@@ -92,15 +103,14 @@ rstBtn.onclick = function () {
   btn9.textContent = "";
   clickCount = 0;
   result.textContent = "";
+  playerTurn.textContent = "";
   boardValues = Array(9).fill(null);
-  console.log("Reset button clicked");
 
   if (currentPlayer === "X") {
     currentPlayer = "O";
   } else {
     currentPlayer = "X";
   }
-  console.log(boardValues);
 };
 
 function checkWinner(player, board) {
