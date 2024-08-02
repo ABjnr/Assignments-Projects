@@ -46,3 +46,13 @@ function onCancelAlert() {
   );
   alertMe();
 }
+
+/* function myConfetti() {
+  const start = () => {
+    setTimeout(function () {
+      confetti.start();
+    });
+  };
+  start();
+}
+ */

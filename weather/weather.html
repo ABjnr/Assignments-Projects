@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather</title>
+    <link rel="stylesheet" href="../weather/weather.css"">
+  </head>
+  <body>
+    <h1>Weather checker</h1>
+    <br /><br />
+    <label for="conInput">Input a country:</label> <br />
+    <input
+      type="text"
+      name="country"
+      id="conInput"
+      autocomplete="country-name"
+    />
+    <button id="submitBtn" type="button" style="cursor: pointer">Submit</button>
+    <br />
+    <!--  <p>
+      The weather at ${city} is currently ${((temp - 273.15) * (9 / 5) +
+      32).toFixed(1)}°F
+      <br />
+      Humidity: ${humidity}%
+      <br />
+      ${description}
+    </p> -->
+    <div id="displayDiv"></div>
+    <button id="changeDeg" style="visibility: hidden; cursor: pointer">
+      Change to °F
+    </button>
+    <!--  <p id="resultDisp"></p> -->
+    <script src="../weather/weather.js"></script>
+  </body>
+</html>
