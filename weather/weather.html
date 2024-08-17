@@ -7,9 +7,9 @@
     <link rel="stylesheet" href="../weather/weather.css"">
   </head>
   <body>
-    <h1>Weather checker</h1>
+    <h1>Auto Weather Display</h1>
     <br /><br />
-    <label for="conInput">Input a country:</label> <br />
+    <!-- <label for="conInput">Input a country:</label> <br />
     <input
       type="text"
       name="country"
@@ -17,7 +17,7 @@
       autocomplete="country-name"
     />
     <button id="submitBtn" type="button" style="cursor: pointer">Submit</button>
-    <br />
+    <br /> -->
     <!--  <p>
       The weather at ${city} is currently ${((temp - 273.15) * (9 / 5) +
       32).toFixed(1)}°F
@@ -26,10 +26,12 @@
       <br />
       ${description}
     </p> -->
-    <div id="displayDiv"></div>
+    <div id="displayDiv" style="display: block; text-align: center"></div>
     <button id="changeDeg" style="visibility: hidden; cursor: pointer">
       Change to °F
     </button>
+
+    <!--  <button id="randBtn">OUR RAND</button> -->
     <!--  <p id="resultDisp"></p> -->
     <script src="../weather/weather.js"></script>
   </body>
