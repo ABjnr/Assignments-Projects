@@ -9,7 +9,10 @@ let clickCount = 0;
 
 window.onload = function () {
   if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(success, error);
+    navigator.geolocation.getCurrentPosition(success, error, {
+      enableHighAccuracy: true,
+      timeout: 10000,
+    });
   } else {
     console.log("Geolocation is not supported by this browser.");
   }
